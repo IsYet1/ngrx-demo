@@ -1,3 +1,7 @@
+# Development Notes
+- Mockaroo was used to create the sample data. See https://www.mockaroo.com/  
+- This app uses an In Memory API. See https://github.com/angular/in-memory-web-api/blob/master/README.md  
+
 # NgrxDemo
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
