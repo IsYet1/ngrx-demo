@@ -6,18 +6,19 @@ import { AppComponent } from './app.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { SampleDataService } from './data/sample-data.service';
+import { SampleDataApi } from './data/sample-data.api';
 
-
+import { TestSampleDataComponent } from './data/test-sample-data/test-sample-data.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TestSampleDataComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(SampleDataService),
+    HttpClientInMemoryWebApiModule.forRoot(SampleDataApi),
     AppRoutingModule,
   ],
   providers: [],
