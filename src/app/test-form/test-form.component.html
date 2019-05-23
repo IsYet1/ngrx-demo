@@ -1,9 +1,9 @@
 <h2>Test Form</h2>
 
 <div fxLayout="row" fxLayoutGap="2em">
-  <button>On</button>
-  <button>Off</button>
-  <mat-checkbox></mat-checkbox>
+  <button (click)="turnOn()">On</button>
+  <button (click)="turnOff()">Off</button>
+  <mat-checkbox #onoroff>On or Off</mat-checkbox>
 
-  <button>On / Off</button>
+  <button (click)="turnParameter(onoroff.checked)">On / Off</button>
 </div>

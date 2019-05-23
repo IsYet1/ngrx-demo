@@ -1,10 +1,10 @@
-import { ActionTypes, Actions } from './app.actions';
+import { ActionTypes, AppActions } from './app.actions';
 
-interface State {
+export interface AppState {
   exampleStateBool: boolean;
 }
 
-const initialState: State = {
+const initialState: AppState = {
   exampleStateBool: false
 };
 

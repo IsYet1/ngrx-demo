@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Store } from '@ngrx/store';
+import { AppState } from 'src/app/state/';
+import * as appActions from 'src/app/state/app.actions';
+
+
 @Component({
   selector: 'ngrx-test-form',
   templateUrl: './test-form.component.html',
@@ -7,18 +12,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TestFormComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private store: Store<AppState>
+  ) { }
 
   ngOnInit() {
   }
 
   turnOn = () =>
-    console.log('On')
+    this.store.dispatch(new appActions.ExampleStateOn())
 
   turnOff = () =>
-    console.log('Off')
+    this.store.dispatch(new appActions.ExampleStateOff())
 
   turnParameter = (onOff: boolean) =>
-    console.log(onOff)
+    this.store.dispatch(new appActions.ExampleStateParameter(onOff))
 
 }

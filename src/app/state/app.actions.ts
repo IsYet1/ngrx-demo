@@ -19,7 +19,7 @@ export class ExampleStateParameter implements Action {
   constructor(public payload: boolean) { }
 }
 
-export type Actions =
+export type AppActions =
 ExampleStateOn
 | ExampleStateOff
 | ExampleStateParameter
