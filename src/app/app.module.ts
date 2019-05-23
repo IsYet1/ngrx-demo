@@ -1,4 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
+import {
+  MatButtonModule,
+  MatCheckboxModule,
+} from '@angular/material';
+
+
 import { NgModule } from '@angular/core';
 
 import { StoreModule } from '@ngrx/store';
@@ -14,17 +20,23 @@ import { SampleDataApi } from './data/sample-data.api';
 import { appReducer } from './state/';
 
 import { TestSampleDataComponent } from './data/test-sample-data/test-sample-data.component';
+import { TestFormComponent } from './test-form/test-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TestSampleDataComponent
+    TestSampleDataComponent,
+    TestFormComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    MatButtonModule,
+    MatCheckboxModule,
+
     HttpClientInMemoryWebApiModule.forRoot(SampleDataApi),
     AppRoutingModule,
+
     StoreModule.forRoot({app: appReducer}),
     StoreDevtoolsModule.instrument({maxAge: 25}),
     ],
