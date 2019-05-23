@@ -3,7 +3,7 @@ import {
   MatButtonModule,
   MatCheckboxModule,
 } from '@angular/material';
-
+import { FlexLayoutModule, FlexModule } from '@angular/flex-layout';
 
 import { NgModule } from '@angular/core';
 
@@ -33,6 +33,7 @@ import { TestFormComponent } from './test-form/test-form.component';
     HttpClientModule,
     MatButtonModule,
     MatCheckboxModule,
+    FlexLayoutModule,
 
     HttpClientInMemoryWebApiModule.forRoot(SampleDataApi),
     AppRoutingModule,

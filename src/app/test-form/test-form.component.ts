@@ -12,4 +12,13 @@ export class TestFormComponent implements OnInit {
   ngOnInit() {
   }
 
+  turnOn = () =>
+    console.log('On')
+
+  turnOff = () =>
+    console.log('Off')
+
+  turnParameter = (onOff: boolean) =>
+    console.log(onOff)
+
 }
