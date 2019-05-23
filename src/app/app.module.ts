@@ -21,12 +21,14 @@ import { appReducer } from './state/';
 
 import { TestSampleDataComponent } from './data/test-sample-data/test-sample-data.component';
 import { TestFormComponent } from './test-form/test-form.component';
+import { TestOutputComponent } from './test-output/test-output.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TestSampleDataComponent,
-    TestFormComponent
+    TestFormComponent,
+    TestOutputComponent
   ],
   imports: [
     BrowserModule,
