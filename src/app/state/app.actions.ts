@@ -4,6 +4,7 @@ export enum ActionTypes {
   ExampleStateOn = '[Example App] Turn on the Example State',
   ExampleStateOff = '[Example App] Turn off the Example State',
   ExampleStateParameter = '[Example App] Parameter to turn on or off the Example State',
+  ExampleStateOnEffect = '[Example App] Action handled by Effect to turn on the Example State',
 }
 
 export class ExampleStateOn implements Action {
@@ -19,8 +20,14 @@ export class ExampleStateParameter implements Action {
   constructor(public payload: boolean) { }
 }
 
+export class ExampleStateOnEffect implements Action {
+  readonly type = ActionTypes.ExampleStateOnEffect;
+}
+
+
 export type AppActions =
 ExampleStateOn
 | ExampleStateOff
 | ExampleStateParameter
+| ExampleStateOnEffect
 ;

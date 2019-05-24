@@ -3,6 +3,7 @@
 <div fxLayout="row" fxLayoutGap="2em">
   <button (click)="turnOn()">On</button>
   <button (click)="turnOff()">Off</button>
+  <button (click)="turnOnWithEffect()">On - Effect</button>
   <mat-checkbox #onoroff>On or Off</mat-checkbox>
 
   <button (click)="turnParameter(onoroff.checked)">On / Off</button>
