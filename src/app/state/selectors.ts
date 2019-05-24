@@ -10,3 +10,20 @@ export const getExampleState = createSelector(
   state => state.exampleStateBool
 );
 
+export const getSampleData = createSelector(
+  getAppState,
+  state => state.sampleData
+);
+
+export const getCompanies = createSelector(
+  getSampleData,
+  sampleData => sampleData.map(item => item.company)
+);
+
+// export const getUniqueCompanies = createSelector(
+//   getCompanies,
+//   companies => companies.reduce(company => (
+//     if ()
+//   ), [])
+// )
+

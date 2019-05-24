@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import {
   MatButtonModule,
   MatCheckboxModule,
+  MatListModule,
 } from '@angular/material';
 import { FlexLayoutModule, FlexModule } from '@angular/flex-layout';
 
@@ -43,6 +44,7 @@ import { CompanyListComponent } from './sample-data/components/company-list/comp
     HttpClientModule,
     MatButtonModule,
     MatCheckboxModule,
+    MatListModule,
     FlexLayoutModule,
 
     HttpClientInMemoryWebApiModule.forRoot(SampleDataApi),
