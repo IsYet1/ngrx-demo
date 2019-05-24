@@ -5,4 +5,5 @@ export interface SampleData {
   email: string;
   gender: string;
   company: string;
+  role: string;
 }

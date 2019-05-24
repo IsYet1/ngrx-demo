@@ -12,7 +12,8 @@ export class SampleDataApi implements InMemoryDbService {
         last_name: 'Wadworth',
         email: 'jwadworth0@un.org',
         gender: 'Female',
-        company: 'Bubbletube'
+        company: 'Bubbletube',
+        role: 'Sales',
       },
       {
         id: 2,
@@ -20,7 +21,8 @@ export class SampleDataApi implements InMemoryDbService {
         last_name: 'Allner',
         email: 'sallner1@sfgate.com',
         gender: 'Male',
-        company: 'Shufflebeat'
+        company: 'Shufflebeat',
+        role: 'Tech',
       },
       {
         id: 3,
@@ -28,7 +30,8 @@ export class SampleDataApi implements InMemoryDbService {
         last_name: 'Josupeit',
         email: 'cjosupeit2@so-net.ne.jp',
         gender: 'Female',
-        company: 'Roombo'
+        company: 'Bubbletube',
+        role: 'Tech',
       },
       {
         id: 4,
@@ -36,7 +39,8 @@ export class SampleDataApi implements InMemoryDbService {
         last_name: 'Sarver',
         email: 'jsarver3@tmall.com',
         gender: 'Male',
-        company: 'Quimba'
+        company: 'Quimba',
+        role: 'Tech',
       },
       {
         id: 5,
@@ -44,7 +48,8 @@ export class SampleDataApi implements InMemoryDbService {
         last_name: 'Antoniutti',
         email: 'jantoniutti4@google.co.uk',
         gender: 'Female',
-        company: 'Oyonder'
+        company: 'Bubbletube',
+        role: 'Sales',
       },
       {
         id: 6,
@@ -52,7 +57,8 @@ export class SampleDataApi implements InMemoryDbService {
         last_name: 'Redmond',
         email: 'credmond5@altervista.org',
         gender: 'Female',
-        company: 'Edgeclub'
+        company: 'Shufflebeat',
+        role: 'Mgt',
       },
       {
         id: 7,
@@ -60,7 +66,8 @@ export class SampleDataApi implements InMemoryDbService {
         last_name: 'Reeves',
         email: 'freeves6@nsw.gov.au',
         gender: 'Male',
-        company: 'Wordify'
+        company: 'Quimba',
+        role: 'Mgt',
       },
       {
         id: 8,
@@ -68,7 +75,8 @@ export class SampleDataApi implements InMemoryDbService {
         last_name: 'Dax',
         email: 'mdax7@about.com',
         gender: 'Male',
-        company: 'Zoovu'
+        company: 'Bubbletube',
+        role: 'Sales',
       },
       {
         id: 9,
@@ -76,7 +84,8 @@ export class SampleDataApi implements InMemoryDbService {
         last_name: 'Livingston',
         email: 'clivingston8@sina.com.cn',
         gender: 'Female',
-        company: 'Flipstorm'
+        company: 'Quimba',
+        role: 'Tech',
       },
       {
         id: 10,
@@ -84,7 +93,8 @@ export class SampleDataApi implements InMemoryDbService {
         last_name: 'Minghetti',
         email: 'tminghetti9@networksolutions.com',
         gender: 'Male',
-        company: 'Tagfeed'
+        company: 'Shufflebeat',
+        role: 'Mgt',
       },
       {
         id: 11,
@@ -92,7 +102,8 @@ export class SampleDataApi implements InMemoryDbService {
         last_name: 'Staining',
         email: 'estaininga@miibeian.gov.cn',
         gender: 'Male',
-        company: 'Edgeclub'
+        company: 'Quimba',
+        role: 'Tech',
       },
       {
         id: 12,
@@ -100,7 +111,8 @@ export class SampleDataApi implements InMemoryDbService {
         last_name: 'Jephcote',
         email: 'hjephcoteb@edublogs.org',
         gender: 'Male',
-        company: 'Linkbuzz'
+        company: 'Shufflebeat',
+        role: 'Sales',
       },
       {
         id: 13,
@@ -108,7 +120,8 @@ export class SampleDataApi implements InMemoryDbService {
         last_name: 'Pealing',
         email: 'epealingc@linkedin.com',
         gender: 'Male',
-        company: 'Avaveo'
+        company: 'Quimba',
+        role: 'Sales',
       },
       {
         id: 14,
@@ -116,7 +129,8 @@ export class SampleDataApi implements InMemoryDbService {
         last_name: 'Menaul',
         email: 'lmenauld@mtv.com',
         gender: 'Female',
-        company: 'Eamia'
+        company: 'Bubbletube',
+        role: 'SalMgtes',
       },
       {
         id: 15,
@@ -124,7 +138,8 @@ export class SampleDataApi implements InMemoryDbService {
         last_name: 'Rawe',
         email: 'crawee@scientificamerican.com',
         gender: 'Male',
-        company: 'Ainyx'
+        company: 'Shufflebeat',
+        role: 'Tech',
       },
       {
         id: 16,
@@ -132,7 +147,8 @@ export class SampleDataApi implements InMemoryDbService {
         last_name: 'Fishbourn',
         email: 'kfishbournf@unc.edu',
         gender: 'Male',
-        company: 'Dynazzy'
+        company: 'Quimba',
+        role: 'Sales',
       },
       {
         id: 17,
@@ -140,7 +156,8 @@ export class SampleDataApi implements InMemoryDbService {
         last_name: 'Eyer',
         email: 'heyerg@youku.com',
         gender: 'Male',
-        company: 'Aimbo'
+        company: 'Shufflebeat',
+        role: 'Tech',
       },
       {
         id: 18,
@@ -148,7 +165,8 @@ export class SampleDataApi implements InMemoryDbService {
         last_name: 'Byne',
         email: 'tbyneh@omniture.com',
         gender: 'Male',
-        company: 'Mycat'
+        company: 'Quimba',
+        role: 'Mgt',
       },
       {
         id: 19,
@@ -156,7 +174,8 @@ export class SampleDataApi implements InMemoryDbService {
         last_name: 'Reeme',
         email: 'greemei@yelp.com',
         gender: 'Female',
-        company: 'Realfire'
+        company: 'Quimba',
+        role: 'Tech',
       },
       {
         id: 20,
@@ -164,7 +183,8 @@ export class SampleDataApi implements InMemoryDbService {
         last_name: 'Maskrey',
         email: 'kmaskreyj@trellian.com',
         gender: 'Female',
-        company: 'Jamia'
+        company: 'Shufflebeat',
+        role: 'Mgt',
       }
     ];
     return {sampleData};
