@@ -26,6 +26,7 @@ import { TestFormComponent } from './test-form/test-form.component';
 import { TestOutputComponent } from './test-output/test-output.component';
 import { SampleDataContainerComponent } from './sample-data/containers/sample-data-container/sample-data-container.component';
 import { LoadDataComponent } from './sample-data/components/load-data/load-data.component';
+import { CompanyListComponent } from './sample-data/components/company-list/company-list.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { LoadDataComponent } from './sample-data/components/load-data/load-data.
     TestFormComponent,
     TestOutputComponent,
     SampleDataContainerComponent,
-    LoadDataComponent
+    LoadDataComponent,
+    CompanyListComponent
   ],
   imports: [
     BrowserModule,
