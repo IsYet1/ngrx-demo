@@ -4,11 +4,13 @@ import { SampleData } from 'src/app/data/sample-data.model';
 export interface AppState {
   exampleStateBool: boolean;
   sampleData: SampleData[];
+  lastError: any;
 }
 
 const initialState: AppState = {
   exampleStateBool: false,
   sampleData: [],
+  lastError: undefined,
 };
 
 export function appReducer(state = initialState, action) {
@@ -19,6 +21,12 @@ export function appReducer(state = initialState, action) {
       return { ...state, exampleStateBool: false };
     case ActionTypes.ExampleStateParameter:
       return {...state, exampleStateBool: action.payload };
+
+    case ActionTypes.SampleDataLoadRequestSuccess:
+      return {...state, sampleData: action.payload };
+    case ActionTypes.SampleDataLoadRequestFail:
+      return {...state, sampleData: [], lastError: action.payload };
+
     default:
       return state;
   }
