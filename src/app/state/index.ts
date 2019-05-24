@@ -1,11 +1,14 @@
 import { ActionTypes, AppActions } from './app.actions';
+import { SampleData } from 'src/app/data/sample-data.model';
 
 export interface AppState {
   exampleStateBool: boolean;
+  sampleData: SampleData[];
 }
 
 const initialState: AppState = {
-  exampleStateBool: false
+  exampleStateBool: false,
+  sampleData: [],
 };
 
 export function appReducer(state = initialState, action) {

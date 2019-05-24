@@ -3,6 +3,8 @@ import { map, tap } from 'rxjs/operators';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { ActionTypes } from './app.actions';
 import * as actions from './app.actions';
+import { SampleData } from 'src/app/data/sample-data.model';
+import { SampleDataService } from 'src/app/data/sample-data.service';
 
 @Injectable()
 export class AppEffects {
