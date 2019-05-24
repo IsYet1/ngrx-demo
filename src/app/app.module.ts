@@ -24,13 +24,17 @@ import { SampleDataApi } from './data/sample-data.api';
 import { TestSampleDataComponent } from './data/test-sample-data/test-sample-data.component';
 import { TestFormComponent } from './test-form/test-form.component';
 import { TestOutputComponent } from './test-output/test-output.component';
+import { SampleDataContainerComponent } from './sample-data/containers/sample-data-container/sample-data-container.component';
+import { LoadDataComponent } from './sample-data/components/load-data/load-data.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TestSampleDataComponent,
     TestFormComponent,
-    TestOutputComponent
+    TestOutputComponent,
+    SampleDataContainerComponent,
+    LoadDataComponent
   ],
   imports: [
     BrowserModule,
