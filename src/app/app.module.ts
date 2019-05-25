@@ -1,10 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import {
   MatButtonModule,
   MatCheckboxModule,
   MatListModule,
+  MatSelectModule,
+  MatOptionModule,
 } from '@angular/material';
-import { FlexLayoutModule, FlexModule } from '@angular/flex-layout';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { NgModule } from '@angular/core';
 
@@ -41,10 +45,13 @@ import { CompanyListComponent } from './sample-data/components/company-list/comp
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     MatButtonModule,
     MatCheckboxModule,
     MatListModule,
+    MatSelectModule,
+    MatOptionModule,
     FlexLayoutModule,
 
     HttpClientInMemoryWebApiModule.forRoot(SampleDataApi),
