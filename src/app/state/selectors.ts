@@ -20,10 +20,8 @@ export const getCompanies = createSelector(
   sampleData => sampleData.map(item => item.company)
 );
 
-// export const getUniqueCompanies = createSelector(
-//   getCompanies,
-//   companies => companies.reduce(company => (
-//     if ()
-//   ), [])
-// )
+export const getUniqueCompanies = createSelector(
+  getCompanies,
+  companies => Array.from((new Set(companies)).values())
+);
 

@@ -19,7 +19,7 @@ export class CompanyListComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.companies$ = this.store.pipe(select(appSelectors.getCompanies));
+    this.companies$ = this.store.pipe(select(appSelectors.getUniqueCompanies));
   }
 
 }
