@@ -13,12 +13,14 @@ import * as appActions from 'src/app/state/app.actions';
   styleUrls: ['./company-details.component.scss']
 })
 export class CompanyDetailsComponent implements OnInit {
+  company$: Observable<string>;
 
   constructor(
     private store: Store<AppState>
   ) { }
 
   ngOnInit() {
+    this.company$ = this.store.pipe(select(appSelectors.getCurrentCompany));
   }
 
 }

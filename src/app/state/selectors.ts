@@ -25,3 +25,8 @@ export const getUniqueCompanies = createSelector(
   companies => Array.from((new Set(companies)).values())
 );
 
+export const getCurrentCompany = createSelector(
+  getAppState,
+  state => state.currentCompany
+);
+
