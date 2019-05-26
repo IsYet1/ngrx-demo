@@ -30,3 +30,9 @@ export const getCurrentCompany = createSelector(
   state => state.currentCompany
 );
 
+export const getCompanyDetails = createSelector(
+  getAppState,
+  state =>
+    state.sampleData
+    .filter(co => co.company === state.currentCompany)
+);
