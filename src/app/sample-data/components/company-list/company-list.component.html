@@ -1,6 +1,7 @@
 <h3>Companies</h3>
 
 <select  (change)="setCurrentCompany($event.target.value)">
+    <option value=""></option>
     <option *ngFor="let item of (companies$ | async)" [value]="item">
       {{ item }}
     </option>
