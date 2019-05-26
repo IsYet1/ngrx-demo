@@ -32,6 +32,7 @@ import { TestOutputComponent } from './test-output/test-output.component';
 import { SampleDataContainerComponent } from './sample-data/containers/sample-data-container/sample-data-container.component';
 import { LoadDataComponent } from './sample-data/components/load-data/load-data.component';
 import { CompanyListComponent } from './sample-data/components/company-list/company-list.component';
+import { CompanyDetailsComponent } from './sample-data/components/company-details/company-details.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { CompanyListComponent } from './sample-data/components/company-list/comp
     TestOutputComponent,
     SampleDataContainerComponent,
     LoadDataComponent,
-    CompanyListComponent
+    CompanyListComponent,
+    CompanyDetailsComponent
   ],
   imports: [
     BrowserModule,
