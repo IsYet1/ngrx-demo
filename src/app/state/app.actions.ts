@@ -10,6 +10,8 @@ export enum ActionTypes {
   SampleDataLoadRequest = '[Example app] Sample Data load requested',
   SampleDataLoadRequestSuccess = '[Example app] Sample Data load succeeded',
   SampleDataLoadRequestFail = '[Example app] Sample Data load failed',
+
+  SetCurrentCompany = '[Company List] Set the current selected company',
 }
 
 //#region Example state actions
@@ -45,6 +47,11 @@ export class SampleDataLoadRequestFail implements Action {
   readonly type = ActionTypes.SampleDataLoadRequest;
   constructor(public payload: any) {}
 }
+
+export class SetCurrentCompany implements Action {
+  readonly type = ActionTypes.SetCurrentCompany;
+  constructor(public payload: string) {}
+}
 //#endregion
 
 export type AppActions =
@@ -56,4 +63,5 @@ ExampleStateOn
 | SampleDataLoadRequest
 | SampleDataLoadRequestSuccess
 | SampleDataLoadRequestFail
+| SetCurrentCompany
 ;

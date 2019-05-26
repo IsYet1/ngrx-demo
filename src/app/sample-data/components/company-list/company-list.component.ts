@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Store, select } from '@ngrx/store';
 import { AppState } from 'src/app/state/';
 import * as appSelectors from 'src/app/state/selectors';
+import * as appActions from 'src/app/state/app.actions';
 
 @Component({
   selector: 'ngrx-company-list',
@@ -21,5 +22,8 @@ export class CompanyListComponent implements OnInit {
   ngOnInit() {
     this.companies$ = this.store.pipe(select(appSelectors.getUniqueCompanies));
   }
+
+  setCurrentCompany = (selectedOption: string) =>
+    this.store.dispatch(new appActions.SetCurrentCompany(selectedOption))
 
 }
