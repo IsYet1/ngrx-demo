@@ -17,6 +17,6 @@ export class SampleDataService {
   }
 
   postSampleData(data: SampleData): Observable<SampleData> {
-    return this.http.post<SampleData>('api/sampledata', data);
+    return this.http.post<SampleData>('api/sampleData', data);
   }
 }

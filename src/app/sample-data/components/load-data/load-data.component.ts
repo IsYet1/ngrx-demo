@@ -29,7 +29,6 @@ export class LoadDataComponent implements OnInit {
       first_name: 'New',
       last_name: 'Company',
       gender: 'na',
-      id: 99,
       role: 'Sales',
     };
     this.store.dispatch(new appActions.SampleDataPostRequest(newCompany));
