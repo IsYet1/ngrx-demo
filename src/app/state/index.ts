@@ -29,6 +29,11 @@ export function appReducer(state = initialState, action) {
     case ActionTypes.SampleDataLoadRequestFail:
       return {...state, sampleData: [], lastError: action.payload };
 
+    case ActionTypes.SampleDataPostRequestSuccess:
+        return { ...state, lastError: action.payload };
+    case ActionTypes.SampleDataPostRequestFail:
+        return { ...state, lastError: action.payload };
+
     case ActionTypes.SetCurrentCompany:
       return {...state, currentCompany: action.payload };
 

@@ -15,4 +15,8 @@ export class SampleDataService {
   getSampleData(): Observable<SampleData[]> {
     return this.http.get<SampleData[]>('api/sampleData');
   }
+
+  postSampleData(data: SampleData): Observable<SampleData> {
+    return this.http.post<SampleData>('api/sampledata', data);
+  }
 }
