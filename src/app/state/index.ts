@@ -16,6 +16,7 @@ const initialState: AppState = {
 };
 
 export function appReducer(state = initialState, action) {
+  let clonedArray: SampleData[];
   switch (action.type) {
     case ActionTypes.ExampleStateOn:
       return { ...state, exampleStateBool: true };
@@ -30,19 +31,21 @@ export function appReducer(state = initialState, action) {
       return {...state, sampleData: [], lastError: action.payload };
 
     case ActionTypes.SampleDataPostRequestSuccess:
-        const clonedArray = [...state.sampleData];
+        clonedArray = [...state.sampleData];
         console.log('%c Cloned Array in reducer', 'color: purple', clonedArray);
         clonedArray.push(action.payload);
         return { ...state, sampleData: clonedArray };
-    case ActionTypes.SampleDataPostRequestFail:
+
+      case ActionTypes.SampleDataPostRequestFail:
         return { ...state, lastError: action.payload };
 
     case ActionTypes.SampleDataPostRequestCurCompanySuccess:
-        const clonedArray = [...state.sampleData];
+        clonedArray = [...state.sampleData];
         console.log('%c Cloned Array in Cur Comany reducer', 'color: green', clonedArray);
         clonedArray.push(action.payload);
         return { ...state, sampleData: clonedArray };
-    case ActionTypes.SampleDataPostRequestCurCompanyFail:
+
+      case ActionTypes.SampleDataPostRequestCurCompanyFail:
         return { ...state, lastError: action.payload };
 
     case ActionTypes.SetCurrentCompany:
