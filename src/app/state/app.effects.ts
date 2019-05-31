@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { map, tap, mergeMap, catchError, withLatestFrom } from 'rxjs/operators';
+import { map, tap, mergeMap, catchError, withLatestFrom, concatMap } from 'rxjs/operators';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 
 import { Store, select } from '@ngrx/store';
@@ -47,7 +47,7 @@ export class AppEffects {
     ofType<actions.SampleDataPostRequest>(ActionTypes.SampleDataPostRequest),
     tap((action) => console.log('Post Effect action', action)),
     map(action => action.payload),
-    mergeMap((newCompany) =>
+    concatMap((newCompany) =>
       this.sampleDataService.postSampleData(newCompany).pipe(
         tap((tapdata) => console.log('response from api post', tapdata)),
         map((resp) => (new actions.SampleDataPostRequestSuccess(resp))),
@@ -63,7 +63,7 @@ export class AppEffects {
     withLatestFrom(this.store.pipe(select(appSelectors.getCurrentCompany))),
     map(([action, curCompany]) => ({...action.payload, company: curCompany})),
     tap((dataToPost) => console.log('%c Post Effect action', 'color: green', dataToPost)),
-    mergeMap((dataToPost) =>
+    concatMap((dataToPost) =>
       this.sampleDataService.postSampleData(dataToPost).pipe(
         tap((tapdata) => console.log('response from curCompany api post', tapdata)),
         map((resp) => (new actions.SampleDataPostRequestCurCompanySuccess(resp))),
