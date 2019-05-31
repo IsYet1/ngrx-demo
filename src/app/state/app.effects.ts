@@ -43,7 +43,7 @@ export class AppEffects {
   ));
 
   @Effect()
-  postSampleApiDat$ = this.actions$.pipe(
+  postSampleApiData$ = this.actions$.pipe(
     ofType<actions.SampleDataPostRequest>(ActionTypes.SampleDataPostRequest),
     tap((action) => console.log('Post Effect action', action)),
     // TODO: Remove this map
