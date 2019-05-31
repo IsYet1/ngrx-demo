@@ -46,11 +46,12 @@ export class AppEffects {
   postSampleApiDat$ = this.actions$.pipe(
     ofType<actions.SampleDataPostRequest>(ActionTypes.SampleDataPostRequest),
     tap((action) => console.log('Post Effect action', action)),
+    // TODO: Remove this map
     map(action => action.payload),
     mergeMap((newCompany) =>
       this.sampleDataService.postSampleData(newCompany).pipe(
         tap((tapdata) => console.log('response from api post', tapdata)),
-        map((resp) => (new actions.SampleDataPostRequestSuccess(resp[0]))),
+        map((resp) => (new actions.SampleDataPostRequestSuccess(resp))),
         catchError(err => of(new actions.SampleDataPostRequestFail(err))
         )
       ),

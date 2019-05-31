@@ -59,7 +59,7 @@ export class SampleDataPostRequest implements Action {
 
 export class SampleDataPostRequestSuccess implements Action {
   readonly type = ActionTypes.SampleDataPostRequestSuccess;
-  constructor(public payload: SampleData[]) {}
+  constructor(public payload: SampleData) {}
 }
 
 export class SampleDataPostRequestFail implements Action {

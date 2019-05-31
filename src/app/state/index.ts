@@ -30,7 +30,10 @@ export function appReducer(state = initialState, action) {
       return {...state, sampleData: [], lastError: action.payload };
 
     case ActionTypes.SampleDataPostRequestSuccess:
-        return { ...state, lastError: action.payload };
+        const clonedArray = [...state.sampleData];
+        console.log('%c Cloned Array in reducer', 'color: purple', clonedArray);
+        clonedArray.push(action.payload);
+        return { ...state, sampleData: clonedArray };
     case ActionTypes.SampleDataPostRequestFail:
         return { ...state, lastError: action.payload };
 
