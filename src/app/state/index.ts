@@ -37,6 +37,14 @@ export function appReducer(state = initialState, action) {
     case ActionTypes.SampleDataPostRequestFail:
         return { ...state, lastError: action.payload };
 
+    case ActionTypes.SampleDataPostRequestCurCompanySuccess:
+        const clonedArray = [...state.sampleData];
+        console.log('%c Cloned Array in Cur Comany reducer', 'color: green', clonedArray);
+        clonedArray.push(action.payload);
+        return { ...state, sampleData: clonedArray };
+    case ActionTypes.SampleDataPostRequestCurCompanyFail:
+        return { ...state, lastError: action.payload };
+
     case ActionTypes.SetCurrentCompany:
       return {...state, currentCompany: action.payload };
 

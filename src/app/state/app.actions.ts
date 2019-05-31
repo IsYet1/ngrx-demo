@@ -11,6 +11,10 @@ export enum ActionTypes {
   SampleDataLoadRequestSuccess = '[Example app] Sample Data load succeeded',
   SampleDataLoadRequestFail = '[Example app] Sample Data load failed',
 
+  SampleDataPostRequestCurCompany = '[Example app] Sample Data Cur Company Post requested',
+  SampleDataPostRequestCurCompanySuccess = '[Example app] Sample Data Cur Company Post succeeded',
+  SampleDataPostRequestCurCompanyFail = '[Example app] Sample Data Cur Company Post failed',
+
   SampleDataPostRequest = '[Example app] Sample Data Post requested',
   SampleDataPostRequestSuccess = '[Example app] Sample Data Post succeeded',
   SampleDataPostRequestFail = '[Example app] Sample Data Post failed',
@@ -67,6 +71,21 @@ export class SampleDataPostRequestFail implements Action {
   constructor(public payload: any) {}
 }
 
+export class SampleDataPostRequestCurCompany implements Action {
+  readonly type = ActionTypes.SampleDataPostRequestCurCompany;
+  constructor(public payload: SampleData) {}
+}
+
+export class SampleDataPostRequestCurCompanySuccess implements Action {
+  readonly type = ActionTypes.SampleDataPostRequestCurCompanySuccess;
+  constructor(public payload: SampleData) {}
+}
+
+export class SampleDataPostRequestCurCompanyFail implements Action {
+  readonly type = ActionTypes.SampleDataPostRequestCurCompanyFail;
+  constructor(public payload: any) {}
+}
+
 export class SetCurrentCompany implements Action {
   readonly type = ActionTypes.SetCurrentCompany;
   constructor(public payload: string) {}
@@ -86,6 +105,10 @@ ExampleStateOn
 | SampleDataPostRequest
 | SampleDataPostRequestSuccess
 | SampleDataPostRequestFail
+
+| SampleDataPostRequestCurCompany
+| SampleDataPostRequestCurCompanySuccess
+| SampleDataPostRequestCurCompanyFail
 
 | SetCurrentCompany
 ;

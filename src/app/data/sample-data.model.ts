@@ -4,6 +4,6 @@ export interface SampleData {
   last_name: string;
   email: string;
   gender: string;
-  company: string;
+  company?: string;
   role: string;
 }

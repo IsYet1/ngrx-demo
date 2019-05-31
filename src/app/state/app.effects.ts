@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { map, tap, mergeMap, catchError } from 'rxjs/operators';
+import { map, tap, mergeMap, catchError, withLatestFrom } from 'rxjs/operators';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 
 import { Store, select } from '@ngrx/store';
@@ -46,13 +46,28 @@ export class AppEffects {
   postSampleApiData$ = this.actions$.pipe(
     ofType<actions.SampleDataPostRequest>(ActionTypes.SampleDataPostRequest),
     tap((action) => console.log('Post Effect action', action)),
-    // TODO: Remove this map
     map(action => action.payload),
     mergeMap((newCompany) =>
       this.sampleDataService.postSampleData(newCompany).pipe(
         tap((tapdata) => console.log('response from api post', tapdata)),
         map((resp) => (new actions.SampleDataPostRequestSuccess(resp))),
         catchError(err => of(new actions.SampleDataPostRequestFail(err))
+        )
+      ),
+    )
+  );
+
+  @Effect()
+  postSampleApiDataCurCompany$ = this.actions$.pipe(
+    ofType<actions.SampleDataPostRequestCurCompany>(ActionTypes.SampleDataPostRequestCurCompany),
+    withLatestFrom(this.store.pipe(select(appSelectors.getCurrentCompany))),
+    map(([action, curCompany]) => ({...action.payload, company: curCompany})),
+    tap((dataToPost) => console.log('%c Post Effect action', 'color: green', dataToPost)),
+    mergeMap((dataToPost) =>
+      this.sampleDataService.postSampleData(dataToPost).pipe(
+        tap((tapdata) => console.log('response from curCompany api post', tapdata)),
+        map((resp) => (new actions.SampleDataPostRequestCurCompanySuccess(resp))),
+        catchError(err => of(new actions.SampleDataPostRequestCurCompanyFail(err))
         )
       ),
     )
