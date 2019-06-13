@@ -22,6 +22,9 @@ export class TestFormComponent implements OnInit {
   turnOn = () =>
     this.store.dispatch(new appActions.ExampleStateOn())
 
+  turnOn8 = () =>
+    this.store.dispatch(new appActions.ExampleStateOn())
+
   turnOff = () =>
     this.store.dispatch(new appActions.ExampleStateOff())
 

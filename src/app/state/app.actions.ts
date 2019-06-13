@@ -1,6 +1,9 @@
 import { Action } from '@ngrx/store';
 import { SampleData } from 'src/app/data/sample-data.model';
 
+import { createAction, props } from '@ngrx/store';
+
+
 export enum ActionTypes {
   ExampleStateOn = '[Example App] Turn on the Example State',
   ExampleStateOff = '[Example App] Turn off the Example State',
@@ -26,6 +29,10 @@ export enum ActionTypes {
 export class ExampleStateOn implements Action {
   readonly type = ActionTypes.ExampleStateOn;
 }
+
+export const ExampleStateOn8 = createAction(
+  '[8 Example App] Turn on the Example State'
+);
 
 export class ExampleStateOff implements Action {
   readonly type = ActionTypes.ExampleStateOff;

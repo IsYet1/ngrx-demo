@@ -1,6 +1,9 @@
 import { ActionTypes, AppActions } from './app.actions';
 import { SampleData } from 'src/app/data/sample-data.model';
 
+import { createReducer, on } from '@ngrx/store';
+import * as appActions from './app.actions';
+
 export interface AppState {
   exampleStateBool: boolean;
   sampleData: SampleData[];
@@ -14,6 +17,16 @@ const initialState: AppState = {
   currentCompany: undefined,
   lastError: undefined,
 };
+
+export const appReducer8 = createReducer(
+  initialState,
+  on(appActions.ExampleStateOn8,
+    state => ({
+      ...state,
+      exampleStateBool: true
+    })
+  )
+);
 
 export function appReducer(state = initialState, action) {
   let clonedArray: SampleData[];
