@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 
-import { Store } from '@ngrx/store';
+import { Store, select } from '@ngrx/store';
 import { AppState } from 'src/app/state/';
 import * as appActions from 'src/app/state/app.actions';
+import * as appSelectors from 'src/app/state/selectors';
 import { SampleData } from 'src/app/data/sample-data.model';
 
 @Component({
@@ -11,12 +13,14 @@ import { SampleData } from 'src/app/data/sample-data.model';
   styleUrls: ['./load-data.component.scss']
 })
 export class LoadDataComponent implements OnInit {
+  exampleState$: Observable<boolean>;
 
   constructor(
     private store: Store<AppState>
   ) { }
 
   ngOnInit() {
+    this.exampleState$ = this.store.pipe(select(appSelectors.getExampleState));
   }
 
   loadData = () =>
