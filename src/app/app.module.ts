@@ -15,7 +15,7 @@ import { NgModule } from '@angular/core';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { appReducer } from './state/';
+import { appReducer, appReducer8 } from './state/';
 import { AppEffects } from './state/app.effects';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -59,7 +59,7 @@ import { CompanyDetailsComponent } from './sample-data/components/company-detail
     HttpClientInMemoryWebApiModule.forRoot(SampleDataApi),
     AppRoutingModule,
 
-    StoreModule.forRoot({app: appReducer}),
+    StoreModule.forRoot({app: appReducer, app8: appReducer8}),
     EffectsModule.forRoot([AppEffects]),
     StoreDevtoolsModule.instrument({maxAge: 25}),
     ],

@@ -11,6 +11,14 @@ export interface AppState {
   lastError: any;
 }
 
+export interface AppState8 {
+  exampleStateBool: boolean;
+}
+
+const initialState8: AppState8 = {
+  exampleStateBool: false,
+};
+
 const initialState: AppState = {
   exampleStateBool: false,
   sampleData: [],
@@ -19,7 +27,7 @@ const initialState: AppState = {
 };
 
 export const appReducer8 = createReducer(
-  initialState,
+  initialState8,
   on(appActions.ExampleStateOn8,
     state => ({
       ...state,
