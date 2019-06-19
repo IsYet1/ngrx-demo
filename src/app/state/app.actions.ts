@@ -26,9 +26,6 @@ export enum ActionTypes {
 }
 
 //#region Example state actions
-export class ExampleStateOn implements Action {
-  readonly type = ActionTypes.ExampleStateOn;
-}
 
 export const ExampleStateOn8 = createAction(
   '[8 Example App] Turn on the Example State'
@@ -37,6 +34,14 @@ export const ExampleStateOn8 = createAction(
 export const ExamplStateOff8 = createAction(
   '[8 Example App] Turn off the example state'
 );
+
+// export const ExampleStateParameter8 = createAction(
+//   '[8 Example App] Set example boolean to parameter',
+// )
+
+export class ExampleStateOn implements Action {
+  readonly type = ActionTypes.ExampleStateOn;
+}
 
 export class ExampleStateOff implements Action {
   readonly type = ActionTypes.ExampleStateOff;

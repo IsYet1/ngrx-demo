@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { Store, select } from '@ngrx/store';
-import { AppState } from 'src/app/state/';
+import { AppState, AppState8 } from 'src/app/state/';
 import * as appSelectors from 'src/app/state/selectors';
 
 
@@ -14,6 +14,7 @@ import * as appSelectors from 'src/app/state/selectors';
 export class TestOutputComponent implements OnInit {
 
   exampleState$: Observable<boolean>;
+  exampleState8$: Observable<boolean>;
 
   constructor(
     private store: Store<AppState>
@@ -21,6 +22,7 @@ export class TestOutputComponent implements OnInit {
 
   ngOnInit() {
     this.exampleState$ = this.store.pipe(select(appSelectors.getExampleState));
+    this.exampleState8$ = this.store.pipe(select(appSelectors.getExampleState8));
   }
 
 }
