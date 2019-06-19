@@ -33,7 +33,13 @@ export const appReducer8 = createReducer(
       ...state,
       exampleStateBool: true
     })
-  )
+  ),
+  on(appActions.ExamplStateOff8,
+    state => ({
+      ...state,
+      exampleStateBool: false
+    })
+  ),
 );
 
 export function appReducer(state = initialState, action) {

@@ -34,6 +34,10 @@ export const ExampleStateOn8 = createAction(
   '[8 Example App] Turn on the Example State'
 );
 
+export const ExamplStateOff8 = createAction(
+  '[8 Example App] Turn off the example state'
+);
+
 export class ExampleStateOff implements Action {
   readonly type = ActionTypes.ExampleStateOff;
 }
