@@ -6,7 +6,7 @@ import {
   MatCheckboxModule,
   MatListModule,
   MatSelectModule,
-  MatOptionModule,
+  MatOptionModule
 } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -24,7 +24,6 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { SampleDataApi } from './data/sample-data.api';
-
 
 import { TestSampleDataComponent } from './data/test-sample-data/test-sample-data.component';
 import { TestFormComponent } from './test-form/test-form.component';
@@ -59,11 +58,24 @@ import { CompanyDetailsComponent } from './sample-data/components/company-detail
     HttpClientInMemoryWebApiModule.forRoot(SampleDataApi),
     AppRoutingModule,
 
-    StoreModule.forRoot({app: appReducer, app8: appReducer8}),
+    StoreModule.forRoot(
+      {
+        app: appReducer,
+        app8: appReducer8
+      },
+      {
+        runtimeChecks: {
+          strictActionImmutability: true,
+          strictStateImmutability: true,
+          strictActionSerializability: true,
+          strictStateSerializability: true
+        }
+      }
+    ),
     EffectsModule.forRoot([AppEffects]),
-    StoreDevtoolsModule.instrument({maxAge: 25}),
-    ],
+    StoreDevtoolsModule.instrument({ maxAge: 25 })
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
