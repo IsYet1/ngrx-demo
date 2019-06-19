@@ -35,9 +35,10 @@ export const ExamplStateOff8 = createAction(
   '[8 Example App] Turn off the example state'
 );
 
-// export const ExampleStateParameter8 = createAction(
-//   '[8 Example App] Set example boolean to parameter',
-// )
+export const ExampleStateParameter8 = createAction(
+  '[8 Example App] Set example boolean to parameter',
+  props<{onOrOff: boolean}>()
+);
 
 export class ExampleStateOn implements Action {
   readonly type = ActionTypes.ExampleStateOn;

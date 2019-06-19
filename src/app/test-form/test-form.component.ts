@@ -19,14 +19,18 @@ export class TestFormComponent implements OnInit {
   ngOnInit() {
   }
 
-  turnOn = () =>
-    this.store.dispatch(new appActions.ExampleStateOn())
-
   turnOn8 = () =>
     this.store.dispatch(appActions.ExampleStateOn8())
 
   turnOff8 = () =>
     this.store.dispatch(appActions.ExamplStateOff8())
+
+  turnParameter8 = (onOff: boolean) =>
+    this.store.dispatch(appActions.ExampleStateParameter8({onOrOff: onOff}))
+
+
+  turnOn = () =>
+    this.store.dispatch(new appActions.ExampleStateOn())
 
   turnOff = () =>
     this.store.dispatch(new appActions.ExampleStateOff())
