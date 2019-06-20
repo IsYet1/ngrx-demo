@@ -24,8 +24,22 @@ export class AppEffects {
 
   ExampleStateOnEffect8$ = createEffect(() => this.actions$.pipe(
     ofType(actions.ExampleStateOnEffect8),
-    tap(() => console.log('%c In the effect', 'color: green')),
+    tap(() => console.log('%c In the load data 8 effect', 'color: green')),
     map(() => actions.ExampleStateOn8())
+  ));
+
+  SampleDataLoadRequest8 = createEffect(() => this.actions$.pipe(
+    ofType(actions.SampleDataLoadRequest8),
+    mergeMap(() =>
+      this.sampleDataService.getSampleData().pipe(
+        map(sampleData =>
+          actions.SampleDataLoadRequestSuccess8({sampleData})
+        ),
+        catchError(err =>
+          of(actions.SampleDataLoadRequestFail8({errorInfo: err}))
+        )
+      )
+    )
   ));
 
   @Effect()

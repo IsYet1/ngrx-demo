@@ -19,8 +19,12 @@ export class LoadDataComponent implements OnInit {
   ngOnInit() {
   }
 
-  loadData = () =>
-    this.store.dispatch(new appActions.SampleDataLoadRequest())
+  loadData() {
+    this.store.dispatch(new appActions.SampleDataLoadRequest());
+  }
+
+  loadData8 = () =>
+    this.store.dispatch(appActions.SampleDataLoadRequest8())
 
   postNewCompany = () => {
     const newCompany: SampleData = {

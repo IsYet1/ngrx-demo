@@ -39,6 +39,20 @@ export const ExampleStateOnEffect8 = createAction(
   '[8 Example App] Action handled by Effect to turn on the Example State'
 );
 
+export const SampleDataLoadRequest8 = createAction(
+  '[8 Example app] Sample Data load requested'
+);
+
+export const SampleDataLoadRequestSuccess8 = createAction(
+  '[8 Example app] Sample Data load succeeded',
+  props<{sampleData: SampleData[]}>()
+);
+
+export const SampleDataLoadRequestFail8 = createAction(
+  '[8 Example app] Sample Data load failed',
+  props<{errorInfo: any}>()
+);
+
 //#endregion
 
 //#region Sample data actions

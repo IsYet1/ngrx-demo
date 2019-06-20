@@ -60,8 +60,8 @@ import { CompanyDetailsComponent } from './sample-data/components/company-detail
 
     StoreModule.forRoot(
       {
+        app8: appReducer8,
         app: appReducer,
-        app8: appReducer8
       },
       {
         runtimeChecks: {
