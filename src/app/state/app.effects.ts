@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { map, tap, mergeMap, catchError, withLatestFrom, concatMap } from 'rxjs/operators';
-import { Actions, Effect, ofType } from '@ngrx/effects';
+import { Actions, Effect, ofType, createEffect } from '@ngrx/effects';
 
 import { Store, select } from '@ngrx/store';
 import { AppState } from 'src/app/state/';
@@ -21,6 +21,12 @@ export class AppEffects {
     private sampleDataService: SampleDataService,
     private store: Store<AppState>
     ) {}
+
+  ExampleStateOnEffect8$ = createEffect(() => this.actions$.pipe(
+    ofType(actions.ExampleStateOnEffect8),
+    tap(() => console.log('%c In the effect', 'color: green')),
+    map(() => actions.ExampleStateOn8())
+  ));
 
   @Effect()
   setExampleStateInEffect$ = this.actions$.pipe(

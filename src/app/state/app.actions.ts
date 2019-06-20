@@ -40,6 +40,10 @@ export const ExampleStateParameter8 = createAction(
   props<{onOrOff: boolean}>()
 );
 
+export const ExampleStateOnEffect8 = createAction(
+  '[8 Example App] Action handled by Effect to turn on the Example State'
+);
+
 export class ExampleStateOn implements Action {
   readonly type = ActionTypes.ExampleStateOn;
 }
