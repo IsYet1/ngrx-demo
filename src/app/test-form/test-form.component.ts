@@ -28,17 +28,7 @@ export class TestFormComponent implements OnInit {
   turnParameter8 = (onOff: boolean) =>
     this.store.dispatch(appActions.ExampleStateParameter8({onOrOff: onOff}))
 
-
-  turnOn = () =>
-    this.store.dispatch(new appActions.ExampleStateOn())
-
-  turnOff = () =>
-    this.store.dispatch(new appActions.ExampleStateOff())
-
   turnOnWithEffect = () =>
     this.store.dispatch(appActions.ExampleStateOnEffect8())
-
-  turnParameter = (onOff: boolean) =>
-    this.store.dispatch(new appActions.ExampleStateParameter(onOff))
 
 }

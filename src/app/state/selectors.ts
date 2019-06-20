@@ -13,11 +13,6 @@ export const getExampleState8 = createSelector(
 export const getAppState =
   createFeatureSelector<AppState>('app');
 
-export const getExampleState = createSelector(
-  getAppState,
-  state => state.exampleStateBool
-);
-
 export const getSampleData = createSelector(
   getAppState,
   state => state.sampleData

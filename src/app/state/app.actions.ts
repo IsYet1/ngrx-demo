@@ -5,11 +5,6 @@ import { createAction, props } from '@ngrx/store';
 
 
 export enum ActionTypes {
-  ExampleStateOn = '[Example App] Turn on the Example State',
-  ExampleStateOff = '[Example App] Turn off the Example State',
-  ExampleStateParameter = '[Example App] Parameter to turn on or off the Example State',
-  ExampleStateOnEffect = '[Example App] Action handled by Effect to turn on the Example State',
-
   SampleDataLoadRequest = '[Example app] Sample Data load requested',
   SampleDataLoadRequestSuccess = '[Example app] Sample Data load succeeded',
   SampleDataLoadRequestFail = '[Example app] Sample Data load failed',
@@ -44,22 +39,6 @@ export const ExampleStateOnEffect8 = createAction(
   '[8 Example App] Action handled by Effect to turn on the Example State'
 );
 
-export class ExampleStateOn implements Action {
-  readonly type = ActionTypes.ExampleStateOn;
-}
-
-export class ExampleStateOff implements Action {
-  readonly type = ActionTypes.ExampleStateOff;
-}
-
-export class ExampleStateParameter implements Action {
-  readonly type = ActionTypes.ExampleStateParameter;
-  constructor(public payload: boolean) { }
-}
-
-export class ExampleStateOnEffect implements Action {
-  readonly type = ActionTypes.ExampleStateOnEffect;
-}
 //#endregion
 
 //#region Sample data actions
@@ -114,10 +93,6 @@ export class SetCurrentCompany implements Action {
 //#endregion
 
 export type AppActions =
-ExampleStateOn
-| ExampleStateOff
-| ExampleStateParameter
-| ExampleStateOnEffect
 
 | SampleDataLoadRequest
 | SampleDataLoadRequestSuccess

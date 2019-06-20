@@ -29,14 +29,6 @@ export class AppEffects {
   ));
 
   @Effect()
-  setExampleStateInEffect$ = this.actions$.pipe(
-    ofType<actions.ExampleStateOnEffect>(ActionTypes.ExampleStateOnEffect),
-    tap(() => console.log('%c In the effect', 'color: green')),
-    // Use map to return the action to set the example state on. Simple test.
-    map(() => new actions.ExampleStateOn())
-  );
-
-  @Effect()
   loadSampleApiData$ = this.actions$.pipe(
     ofType<actions.SampleDataLoadRequest>(ActionTypes.SampleDataLoadRequest),
     mergeMap(() =>

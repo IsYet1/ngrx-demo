@@ -13,7 +13,6 @@ import * as appSelectors from 'src/app/state/selectors';
 })
 export class TestOutputComponent implements OnInit {
 
-  exampleState$: Observable<boolean>;
   exampleState8$: Observable<boolean>;
 
   constructor(
@@ -21,7 +20,6 @@ export class TestOutputComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.exampleState$ = this.store.pipe(select(appSelectors.getExampleState));
     this.exampleState8$ = this.store.pipe(select(appSelectors.getExampleState8));
   }
 

@@ -45,12 +45,6 @@ export const appReducer8 = createReducer(
 export function appReducer(state = initialState, action) {
   let clonedArray: SampleData[];
   switch (action.type) {
-    case ActionTypes.ExampleStateOn:
-      return { ...state, exampleStateBool: true };
-    case ActionTypes.ExampleStateOff:
-      return { ...state, exampleStateBool: false };
-    case ActionTypes.ExampleStateParameter:
-      return { ...state, exampleStateBool: action.payload };
 
     case ActionTypes.SampleDataLoadRequestSuccess:
       return { ...state, sampleData: action.payload };
