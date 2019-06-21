@@ -22,7 +22,7 @@ export class CompanyDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.company$ = this.store.pipe(select(appSelectors.getCurrentCompany8));
-    this.companyDetails$ = this.store.pipe(select(appSelectors.getCompanyDetails));
+    this.companyDetails$ = this.store.pipe(select(appSelectors.getCompanyDetails8));
   }
 
 }
