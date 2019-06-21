@@ -13,14 +13,14 @@ export interface AppState {
 
 export interface AppState8 {
   exampleStateBool: boolean;
-  sampleData8: SampleData[];
+  sampleData: SampleData[];
   currentCompany: string;
   lastError: any;
 }
 
 const initialState8: AppState8 = {
   exampleStateBool: false,
-  sampleData8: [],
+  sampleData: [],
   currentCompany: undefined,
   lastError: undefined
 };
@@ -46,13 +46,17 @@ export const appReducer8 = createReducer(
     ...state,
     exampleStateBool: onOrOff
   })),
-  on(appActions.SampleDataLoadRequestSuccess8, (state8, { sampleData }) => ({
-    ...state8,
-    sampleData8: sampleData
+  on(appActions.SampleDataLoadRequestSuccess8, (state, { sampleData }) => ({
+    ...state,
+    sampleData
   })),
-  on(appActions.SampleDataLoadRequestFail8, (state8, { errorInfo }) => ({
-    ...state8,
+  on(appActions.SampleDataLoadRequestFail8, (state, { errorInfo }) => ({
+    ...state,
     lastError: errorInfo
+  })),
+  on(appActions.SetCurrentCompany8, (state, { company }) => ({
+    ...state,
+    currentCompany: company
   })),
 );
 

@@ -20,10 +20,10 @@ export class CompanyListComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.companies$ = this.store.pipe(select(appSelectors.getUniqueCompanies));
+    this.companies$ = this.store.pipe(select(appSelectors.getUniqueCompanies8));
   }
 
   setCurrentCompany = (selectedOption: string) =>
-    this.store.dispatch(new appActions.SetCurrentCompany(selectedOption))
+    this.store.dispatch(appActions.SetCurrentCompany8({company: selectedOption}))
 
 }

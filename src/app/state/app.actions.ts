@@ -53,6 +53,11 @@ export const SampleDataLoadRequestFail8 = createAction(
   props<{errorInfo: any}>()
 );
 
+export const SetCurrentCompany8 = createAction(
+  '[8 Company List] Set the current selected company',
+  props<{company: string}>()
+);
+
 //#endregion
 
 //#region Sample data actions
