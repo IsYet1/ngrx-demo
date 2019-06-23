@@ -32,6 +32,7 @@ export class AppEffects {
     ofType(actions.SampleDataLoadRequest8),
     mergeMap(() =>
       this.sampleDataService.getSampleData().pipe(
+        tap((sampleData) => console.log('%cSample data loaded', 'color: blue', sampleData)),
         map(sampleData =>
           actions.SampleDataLoadRequestSuccess8({sampleData})
         ),
@@ -42,32 +43,48 @@ export class AppEffects {
     )
   ));
 
-  @Effect()
-  loadSampleApiData$ = this.actions$.pipe(
-    ofType<actions.SampleDataLoadRequest>(ActionTypes.SampleDataLoadRequest),
-    mergeMap(() =>
-    this.sampleDataService.getSampleData().pipe(
-      map(sampleData => {
-        return new actions.SampleDataLoadRequestSuccess(sampleData);
-      }),
-      catchError(err => of(new actions.SampleDataLoadRequestFail(err)))
-    )
-  ));
-
-  @Effect()
-  postSampleApiData$ = this.actions$.pipe(
+  SampleDataPostRequest$ = createEffect(() => this.actions$.pipe(
     ofType<actions.SampleDataPostRequest>(ActionTypes.SampleDataPostRequest),
     tap((action) => console.log('Post Effect action', action)),
     map(action => action.payload),
-    concatMap((newCompany) =>
-      this.sampleDataService.postSampleData(newCompany).pipe(
+    concatMap((companyToAdd) =>
+      this.sampleDataService.postSampleData(companyToAdd).pipe(
         tap((tapdata) => console.log('response from api post', tapdata)),
-        map((resp) => (new actions.SampleDataPostRequestSuccess(resp))),
+        map((newCompany: SampleData) =>
+          (actions.SampleDataPostRequestSuccess({newCompany}))),
         catchError(err => of(new actions.SampleDataPostRequestFail(err))
         )
       ),
     )
-  );
+  ));
+
+
+  // @Effect()
+  // loadSampleApiData$ = this.actions$.pipe(
+  //   ofType<actions.SampleDataLoadRequest>(ActionTypes.SampleDataLoadRequest),
+  //   mergeMap(() =>
+  //   this.sampleDataService.getSampleData().pipe(
+  //     map(sampleData => {
+  //       return new actions.SampleDataLoadRequestSuccess(sampleData);
+  //     }),
+  //     catchError(err => of(new actions.SampleDataLoadRequestFail(err)))
+  //   )
+  // ));
+
+  // @Effect()
+  // postSampleApiData$ = this.actions$.pipe(
+  //   ofType<actions.SampleDataPostRequest>(ActionTypes.SampleDataPostRequest),
+  //   tap((action) => console.log('Post Effect action', action)),
+  //   map(action => action.payload),
+  //   concatMap((companyToAdd) =>
+  //     this.sampleDataService.postSampleData(companyToAdd).pipe(
+  //       tap((tapdata) => console.log('response from api post', tapdata)),
+  //       map((newCompany) => (actions.SampleDataPostRequestSuccess({newCompany}))),
+  //       catchError(err => of(new actions.SampleDataPostRequestFail(err))
+  //       )
+  //     ),
+  //   )
+  // );
 
   @Effect()
   postSampleApiDataCurCompany$ = this.actions$.pipe(

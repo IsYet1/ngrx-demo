@@ -58,22 +58,34 @@ export const appReducer8 = createReducer(
     ...state,
     currentCompany: company
   })),
+  on(appActions.SampleDataPostRequestSuccess, (state, { newCompany }) => ({
+    ...state,
+    sampleData: addCompany(state.sampleData, newCompany)
+  })
+  )
 );
+
+function addCompany(sampleData: SampleData[], newCompany: SampleData): SampleData[] {
+  const clonedArray = [...sampleData];
+  clonedArray.push(newCompany);
+  return clonedArray;
+}
+
 
 export function appReducer(state = initialState, action) {
   let clonedArray: SampleData[];
   switch (action.type) {
 
-    case ActionTypes.SampleDataLoadRequestSuccess:
-      return { ...state, sampleData: action.payload };
-    case ActionTypes.SampleDataLoadRequestFail:
-      return { ...state, sampleData: [], lastError: action.payload };
+    // case ActionTypes.SampleDataLoadRequestSuccess:
+    //   return { ...state, sampleData: action.payload };
+    // case ActionTypes.SampleDataLoadRequestFail:
+    //   return { ...state, sampleData: [], lastError: action.payload };
 
-    case ActionTypes.SampleDataPostRequestSuccess:
-      clonedArray = [...state.sampleData];
-      console.log('%c Cloned Array in reducer', 'color: purple', clonedArray);
-      clonedArray.push(action.payload);
-      return { ...state, sampleData: clonedArray };
+    // case ActionTypes.SampleDataPostRequestSuccess:
+    //   clonedArray = [...state.sampleData];
+    //   console.log('%c Cloned Array in reducer', 'color: purple', clonedArray);
+    //   clonedArray.push(action.payload);
+    //   return { ...state, sampleData: clonedArray };
 
     case ActionTypes.SampleDataPostRequestFail:
       return { ...state, lastError: action.payload };

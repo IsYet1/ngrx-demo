@@ -14,7 +14,7 @@ export enum ActionTypes {
   SampleDataPostRequestCurCompanyFail = '[Example app] Sample Data Cur Company Post failed',
 
   SampleDataPostRequest = '[Example app] Sample Data Post requested',
-  SampleDataPostRequestSuccess = '[Example app] Sample Data Post succeeded',
+  // SampleDataPostRequestSuccess = '[Example app] Sample Data Post succeeded',
   SampleDataPostRequestFail = '[Example app] Sample Data Post failed',
 
   SetCurrentCompany = '[Company List] Set the current selected company',
@@ -58,32 +58,37 @@ export const SetCurrentCompany8 = createAction(
   props<{company: string}>()
 );
 
+export const SampleDataPostRequestSuccess = createAction(
+  '[8 Example app] Sample Data post succeeded',
+  props<{newCompany: SampleData}>()
+);
+
 //#endregion
 
 //#region Sample data actions
-export class SampleDataLoadRequest implements Action {
-  readonly type = ActionTypes.SampleDataLoadRequest;
-}
+// export class SampleDataLoadRequest implements Action {
+//   readonly type = ActionTypes.SampleDataLoadRequest;
+// }
 
-export class SampleDataLoadRequestSuccess implements Action {
-  readonly type = ActionTypes.SampleDataLoadRequestSuccess;
-  constructor(public payload: SampleData[]) {}
-}
+// export class SampleDataLoadRequestSuccess implements Action {
+//   readonly type = ActionTypes.SampleDataLoadRequestSuccess;
+//   constructor(public payload: SampleData[]) {}
+// }
 
-export class SampleDataLoadRequestFail implements Action {
-  readonly type = ActionTypes.SampleDataLoadRequest;
-  constructor(public payload: any) {}
-}
+// export class SampleDataLoadRequestFail implements Action {
+//   readonly type = ActionTypes.SampleDataLoadRequest;
+//   constructor(public payload: any) {}
+// }
 
 export class SampleDataPostRequest implements Action {
   readonly type = ActionTypes.SampleDataPostRequest;
   constructor(public payload: SampleData) {}
 }
 
-export class SampleDataPostRequestSuccess implements Action {
-  readonly type = ActionTypes.SampleDataPostRequestSuccess;
-  constructor(public payload: SampleData) {}
-}
+// export class SampleDataPostRequestSuccess implements Action {
+//   readonly type = ActionTypes.SampleDataPostRequestSuccess;
+//   constructor(public payload: SampleData) {}
+// }
 
 export class SampleDataPostRequestFail implements Action {
   readonly type = ActionTypes.SampleDataPostRequestFail;
@@ -113,12 +118,12 @@ export class SetCurrentCompany implements Action {
 
 export type AppActions =
 
-| SampleDataLoadRequest
-| SampleDataLoadRequestSuccess
-| SampleDataLoadRequestFail
+// | SampleDataLoadRequest
+// | SampleDataLoadRequestSuccess
+// | SampleDataLoadRequestFail
 
 | SampleDataPostRequest
-| SampleDataPostRequestSuccess
+// | SampleDataPostRequestSuccess
 | SampleDataPostRequestFail
 
 | SampleDataPostRequestCurCompany
