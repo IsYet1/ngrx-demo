@@ -58,11 +58,14 @@ export const appReducer8 = createReducer(
     ...state,
     currentCompany: company
   })),
-  on(appActions.SampleDataPostRequestSuccess, (state, { newCompany }) => ({
+  on(appActions.SampleDataPostRequestSuccess8, (state, { newCompany }) => ({
     ...state,
     sampleData: addCompany(state.sampleData, newCompany)
-  })
-  )
+  })),
+  on(appActions.SampleDataPostRequestFail8, (state, { errorInfo }) => ({
+    ...state,
+    lastError: errorInfo
+  })),
 );
 
 function addCompany(sampleData: SampleData[], newCompany: SampleData): SampleData[] {
@@ -87,8 +90,8 @@ export function appReducer(state = initialState, action) {
     //   clonedArray.push(action.payload);
     //   return { ...state, sampleData: clonedArray };
 
-    case ActionTypes.SampleDataPostRequestFail:
-      return { ...state, lastError: action.payload };
+    // case ActionTypes.SampleDataPostRequestFail:
+    //   return { ...state, lastError: action.payload };
 
     case ActionTypes.SampleDataPostRequestCurCompanySuccess:
       clonedArray = [...state.sampleData];
@@ -103,8 +106,8 @@ export function appReducer(state = initialState, action) {
     case ActionTypes.SampleDataPostRequestCurCompanyFail:
       return { ...state, lastError: action.payload };
 
-    case ActionTypes.SetCurrentCompany:
-      return { ...state, currentCompany: action.payload };
+    // case ActionTypes.SetCurrentCompany:
+    //   return { ...state, currentCompany: action.payload };
 
     default:
       return state;

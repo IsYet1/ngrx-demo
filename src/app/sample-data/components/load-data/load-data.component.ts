@@ -31,7 +31,7 @@ export class LoadDataComponent implements OnInit {
       gender: 'na',
       role: 'Sales',
     };
-    this.store.dispatch(new appActions.SampleDataPostRequest(newCompany));
+    this.store.dispatch(appActions.SampleDataPostRequest8({newCompany}));
   }
 
   postCurCompany = () => {

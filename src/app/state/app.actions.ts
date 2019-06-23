@@ -5,19 +5,19 @@ import { createAction, props } from '@ngrx/store';
 
 
 export enum ActionTypes {
-  SampleDataLoadRequest = '[Example app] Sample Data load requested',
-  SampleDataLoadRequestSuccess = '[Example app] Sample Data load succeeded',
-  SampleDataLoadRequestFail = '[Example app] Sample Data load failed',
+  // SampleDataLoadRequest = '[Example app] Sample Data load requested',
+  // SampleDataLoadRequestSuccess = '[Example app] Sample Data load succeeded',
+  // SampleDataLoadRequestFail = '[Example app] Sample Data load failed',
 
   SampleDataPostRequestCurCompany = '[Example app] Sample Data Cur Company Post requested',
   SampleDataPostRequestCurCompanySuccess = '[Example app] Sample Data Cur Company Post succeeded',
   SampleDataPostRequestCurCompanyFail = '[Example app] Sample Data Cur Company Post failed',
 
-  SampleDataPostRequest = '[Example app] Sample Data Post requested',
+  // SampleDataPostRequest = '[Example app] Sample Data Post requested',
   // SampleDataPostRequestSuccess = '[Example app] Sample Data Post succeeded',
-  SampleDataPostRequestFail = '[Example app] Sample Data Post failed',
+  // SampleDataPostRequestFail = '[Example app] Sample Data Post failed',
 
-  SetCurrentCompany = '[Company List] Set the current selected company',
+  // SetCurrentCompany = '[Company List] Set the current selected company',
 }
 
 //#region Example state actions
@@ -58,9 +58,19 @@ export const SetCurrentCompany8 = createAction(
   props<{company: string}>()
 );
 
-export const SampleDataPostRequestSuccess = createAction(
+export const SampleDataPostRequest8 = createAction(
+  '[8 Example app] Sample Data post requested',
+  props<{newCompany: SampleData}>()
+);
+
+export const SampleDataPostRequestSuccess8 = createAction(
   '[8 Example app] Sample Data post succeeded',
   props<{newCompany: SampleData}>()
+);
+
+export const SampleDataPostRequestFail8 = createAction(
+  '[8 Example app] Sample Data Post failed',
+  props<{errorInfo: any}>()
 );
 
 //#endregion
@@ -80,20 +90,20 @@ export const SampleDataPostRequestSuccess = createAction(
 //   constructor(public payload: any) {}
 // }
 
-export class SampleDataPostRequest implements Action {
-  readonly type = ActionTypes.SampleDataPostRequest;
-  constructor(public payload: SampleData) {}
-}
+// export class SampleDataPostRequest implements Action {
+//   readonly type = ActionTypes.SampleDataPostRequest;
+//   constructor(public payload: SampleData) {}
+// }
 
 // export class SampleDataPostRequestSuccess implements Action {
 //   readonly type = ActionTypes.SampleDataPostRequestSuccess;
 //   constructor(public payload: SampleData) {}
 // }
 
-export class SampleDataPostRequestFail implements Action {
-  readonly type = ActionTypes.SampleDataPostRequestFail;
-  constructor(public payload: any) {}
-}
+// export class SampleDataPostRequestFail implements Action {
+//   readonly type = ActionTypes.SampleDataPostRequestFail;
+//   constructor(public payload: any) {}
+// }
 
 export class SampleDataPostRequestCurCompany implements Action {
   readonly type = ActionTypes.SampleDataPostRequestCurCompany;
@@ -110,10 +120,10 @@ export class SampleDataPostRequestCurCompanyFail implements Action {
   constructor(public payload: any) {}
 }
 
-export class SetCurrentCompany implements Action {
-  readonly type = ActionTypes.SetCurrentCompany;
-  constructor(public payload: string) {}
-}
+// export class SetCurrentCompany implements Action {
+//   readonly type = ActionTypes.SetCurrentCompany;
+//   constructor(public payload: string) {}
+// }
 //#endregion
 
 export type AppActions =
@@ -122,13 +132,13 @@ export type AppActions =
 // | SampleDataLoadRequestSuccess
 // | SampleDataLoadRequestFail
 
-| SampleDataPostRequest
-// | SampleDataPostRequestSuccess
-| SampleDataPostRequestFail
+// | SampleDataPostRequest
+// // | SampleDataPostRequestSuccess
+// | SampleDataPostRequestFail
 
 | SampleDataPostRequestCurCompany
 | SampleDataPostRequestCurCompanySuccess
 | SampleDataPostRequestCurCompanyFail
 
-| SetCurrentCompany
+// | SetCurrentCompany
 ;

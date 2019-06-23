@@ -44,15 +44,15 @@ export class AppEffects {
   ));
 
   SampleDataPostRequest$ = createEffect(() => this.actions$.pipe(
-    ofType<actions.SampleDataPostRequest>(ActionTypes.SampleDataPostRequest),
+    ofType(actions.SampleDataPostRequest8),
     tap((action) => console.log('Post Effect action', action)),
-    map(action => action.payload),
+    map(action => action.newCompany),
     concatMap((companyToAdd) =>
       this.sampleDataService.postSampleData(companyToAdd).pipe(
         tap((tapdata) => console.log('response from api post', tapdata)),
         map((newCompany: SampleData) =>
-          (actions.SampleDataPostRequestSuccess({newCompany}))),
-        catchError(err => of(new actions.SampleDataPostRequestFail(err))
+          (actions.SampleDataPostRequestSuccess8({newCompany}))),
+        catchError(errorInfo => of(actions.SampleDataPostRequestFail8({errorInfo}))
         )
       ),
     )
