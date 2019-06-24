@@ -1,4 +1,4 @@
-import { ActionTypes, AppActions } from './app.actions';
+// import { ActionTypes, AppActions } from './app.actions';
 import { SampleData } from 'src/app/data/sample-data.model';
 
 import { createReducer, on } from '@ngrx/store';
@@ -76,7 +76,7 @@ function addCompany(sampleData: SampleData[], newCompany: SampleData): SampleDat
 
 
 export function appReducer(state = initialState, action) {
-  let clonedArray: SampleData[];
+  // let clonedArray: SampleData[];
   switch (action.type) {
 
     // case ActionTypes.SampleDataLoadRequestSuccess:
@@ -93,18 +93,18 @@ export function appReducer(state = initialState, action) {
     // case ActionTypes.SampleDataPostRequestFail:
     //   return { ...state, lastError: action.payload };
 
-    case ActionTypes.SampleDataPostRequestCurCompanySuccess:
-      clonedArray = [...state.sampleData];
-      console.log(
-        '%c Cloned Array in Cur Comany reducer',
-        'color: green',
-        clonedArray
-      );
-      clonedArray.push(action.payload);
-      return { ...state, sampleData: clonedArray };
+    // case ActionTypes.SampleDataPostRequestCurCompanySuccess:
+    //   clonedArray = [...state.sampleData];
+    //   console.log(
+    //     '%c Cloned Array in Cur Comany reducer',
+    //     'color: green',
+    //     clonedArray
+    //   );
+    //   clonedArray.push(action.payload);
+    //   return { ...state, sampleData: clonedArray };
 
-    case ActionTypes.SampleDataPostRequestCurCompanyFail:
-      return { ...state, lastError: action.payload };
+    // case ActionTypes.SampleDataPostRequestCurCompanyFail:
+    //   return { ...state, lastError: action.payload };
 
     // case ActionTypes.SetCurrentCompany:
     //   return { ...state, currentCompany: action.payload };

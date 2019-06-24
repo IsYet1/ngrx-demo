@@ -35,13 +35,13 @@ export class LoadDataComponent implements OnInit {
   }
 
   postCurCompany = () => {
-    const newPost: SampleData = {
+    const newCompany: SampleData = {
       email: 'New Email',
       first_name: 'New',
       last_name: 'Company',
       gender: 'na',
       role: 'Sales',
     };
-    this.store.dispatch(new appActions.SampleDataPostRequestCurCompany(newPost));
+    this.store.dispatch(appActions.SampleDataPostRequestCurCompany8({ newCompany }));
   }
 }

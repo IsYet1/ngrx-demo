@@ -58,48 +58,39 @@ export class AppEffects {
     )
   ));
 
+  SampleDataPostRequestCurCompany8$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(actions.SampleDataPostRequestCurCompany8),
+      tap((action) => console.log('Post Effect action', action.newCompany)),
+      withLatestFrom(this.store.pipe(select(appSelectors.getCurrentCompany8))),
+      tap(([action, curCompany]) => console.log('%cPost Cur Company 66', 'color: blue', action.newCompany, curCompany )),
+      map(([action, curCompany]) => ({...action.newCompany, company: curCompany})),
+      tap((dataToPost) => console.log('%c Post Effect action', 'color: green', dataToPost)),
+      concatMap((dataToPost) =>
+        this.sampleDataService.postSampleData(dataToPost).pipe(
+          tap((tapdata) => console.log('response from curCompany api post', tapdata)),
+          map((newCompany) => (actions.SampleDataPostRequestSuccess8({newCompany}))),
+          catchError(errorInfo => of(actions.SampleDataPostRequestFail8({errorInfo}))
+          )
+        ),
+      )
+    ),
+  );
 
   // @Effect()
-  // loadSampleApiData$ = this.actions$.pipe(
-  //   ofType<actions.SampleDataLoadRequest>(ActionTypes.SampleDataLoadRequest),
-  //   mergeMap(() =>
-  //   this.sampleDataService.getSampleData().pipe(
-  //     map(sampleData => {
-  //       return new actions.SampleDataLoadRequestSuccess(sampleData);
-  //     }),
-  //     catchError(err => of(new actions.SampleDataLoadRequestFail(err)))
-  //   )
-  // ));
-
-  // @Effect()
-  // postSampleApiData$ = this.actions$.pipe(
-  //   ofType<actions.SampleDataPostRequest>(ActionTypes.SampleDataPostRequest),
-  //   tap((action) => console.log('Post Effect action', action)),
-  //   map(action => action.payload),
-  //   concatMap((companyToAdd) =>
-  //     this.sampleDataService.postSampleData(companyToAdd).pipe(
-  //       tap((tapdata) => console.log('response from api post', tapdata)),
-  //       map((newCompany) => (actions.SampleDataPostRequestSuccess({newCompany}))),
-  //       catchError(err => of(new actions.SampleDataPostRequestFail(err))
+  // postSampleApiDataCurCompany$ = this.actions$.pipe(
+  //   ofType<actions.SampleDataPostRequestCurCompany>(ActionTypes.SampleDataPostRequestCurCompany),
+  //   withLatestFrom(this.store.pipe(select(appSelectors.getCurrentCompany))),
+  //   map(([action, curCompany]) => ({...action.payload, company: curCompany})),
+  //   tap((dataToPost) => console.log('%c Post Effect action', 'color: green', dataToPost)),
+  //   concatMap((dataToPost) =>
+  //     this.sampleDataService.postSampleData(dataToPost).pipe(
+  //       tap((tapdata) => console.log('response from curCompany api post', tapdata)),
+  //       map((resp) => (new actions.SampleDataPostRequestCurCompanySuccess(resp))),
+  //       catchError(err => of(new actions.SampleDataPostRequestCurCompanyFail(err))
   //       )
   //     ),
   //   )
   // );
-
-  @Effect()
-  postSampleApiDataCurCompany$ = this.actions$.pipe(
-    ofType<actions.SampleDataPostRequestCurCompany>(ActionTypes.SampleDataPostRequestCurCompany),
-    withLatestFrom(this.store.pipe(select(appSelectors.getCurrentCompany))),
-    map(([action, curCompany]) => ({...action.payload, company: curCompany})),
-    tap((dataToPost) => console.log('%c Post Effect action', 'color: green', dataToPost)),
-    concatMap((dataToPost) =>
-      this.sampleDataService.postSampleData(dataToPost).pipe(
-        tap((tapdata) => console.log('response from curCompany api post', tapdata)),
-        map((resp) => (new actions.SampleDataPostRequestCurCompanySuccess(resp))),
-        catchError(err => of(new actions.SampleDataPostRequestCurCompanyFail(err))
-        )
-      ),
-    )
-  );
 
 }

@@ -9,9 +9,9 @@ export enum ActionTypes {
   // SampleDataLoadRequestSuccess = '[Example app] Sample Data load succeeded',
   // SampleDataLoadRequestFail = '[Example app] Sample Data load failed',
 
-  SampleDataPostRequestCurCompany = '[Example app] Sample Data Cur Company Post requested',
-  SampleDataPostRequestCurCompanySuccess = '[Example app] Sample Data Cur Company Post succeeded',
-  SampleDataPostRequestCurCompanyFail = '[Example app] Sample Data Cur Company Post failed',
+  // SampleDataPostRequestCurCompany = '[Example app] Sample Data Cur Company Post requested',
+  // SampleDataPostRequestCurCompanySuccess = '[Example app] Sample Data Cur Company Post succeeded',
+  // SampleDataPostRequestCurCompanyFail = '[Example app] Sample Data Cur Company Post failed',
 
   // SampleDataPostRequest = '[Example app] Sample Data Post requested',
   // SampleDataPostRequestSuccess = '[Example app] Sample Data Post succeeded',
@@ -73,52 +73,28 @@ export const SampleDataPostRequestFail8 = createAction(
   props<{errorInfo: any}>()
 );
 
+export const SampleDataPostRequestCurCompany8 = createAction(
+  '[8 Example app] Sample Data Cur Company post requested',
+  props<{newCompany: SampleData}>()
+);
+
 //#endregion
 
-//#region Sample data actions
-// export class SampleDataLoadRequest implements Action {
-//   readonly type = ActionTypes.SampleDataLoadRequest;
-// }
 
-// export class SampleDataLoadRequestSuccess implements Action {
-//   readonly type = ActionTypes.SampleDataLoadRequestSuccess;
-//   constructor(public payload: SampleData[]) {}
-// }
-
-// export class SampleDataLoadRequestFail implements Action {
-//   readonly type = ActionTypes.SampleDataLoadRequest;
-//   constructor(public payload: any) {}
-// }
-
-// export class SampleDataPostRequest implements Action {
-//   readonly type = ActionTypes.SampleDataPostRequest;
+// export class SampleDataPostRequestCurCompany implements Action {
+//   readonly type = ActionTypes.SampleDataPostRequestCurCompany;
 //   constructor(public payload: SampleData) {}
 // }
 
-// export class SampleDataPostRequestSuccess implements Action {
-//   readonly type = ActionTypes.SampleDataPostRequestSuccess;
+// export class SampleDataPostRequestCurCompanySuccess implements Action {
+//   readonly type = ActionTypes.SampleDataPostRequestCurCompanySuccess;
 //   constructor(public payload: SampleData) {}
 // }
 
-// export class SampleDataPostRequestFail implements Action {
-//   readonly type = ActionTypes.SampleDataPostRequestFail;
+// export class SampleDataPostRequestCurCompanyFail implements Action {
+//   readonly type = ActionTypes.SampleDataPostRequestCurCompanyFail;
 //   constructor(public payload: any) {}
 // }
-
-export class SampleDataPostRequestCurCompany implements Action {
-  readonly type = ActionTypes.SampleDataPostRequestCurCompany;
-  constructor(public payload: SampleData) {}
-}
-
-export class SampleDataPostRequestCurCompanySuccess implements Action {
-  readonly type = ActionTypes.SampleDataPostRequestCurCompanySuccess;
-  constructor(public payload: SampleData) {}
-}
-
-export class SampleDataPostRequestCurCompanyFail implements Action {
-  readonly type = ActionTypes.SampleDataPostRequestCurCompanyFail;
-  constructor(public payload: any) {}
-}
 
 // export class SetCurrentCompany implements Action {
 //   readonly type = ActionTypes.SetCurrentCompany;
@@ -126,7 +102,7 @@ export class SampleDataPostRequestCurCompanyFail implements Action {
 // }
 //#endregion
 
-export type AppActions =
+// export type AppActions =
 
 // | SampleDataLoadRequest
 // | SampleDataLoadRequestSuccess
@@ -136,9 +112,9 @@ export type AppActions =
 // // | SampleDataPostRequestSuccess
 // | SampleDataPostRequestFail
 
-| SampleDataPostRequestCurCompany
-| SampleDataPostRequestCurCompanySuccess
-| SampleDataPostRequestCurCompanyFail
+// | SampleDataPostRequestCurCompany
+// | SampleDataPostRequestCurCompanySuccess
+// | SampleDataPostRequestCurCompanyFail
 
 // | SetCurrentCompany
-;
+// ;
