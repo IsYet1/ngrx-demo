@@ -4,13 +4,6 @@ import { SampleData } from 'src/app/data/sample-data.model';
 import { createReducer, on } from '@ngrx/store';
 import * as appActions from './app.actions';
 
-export interface AppState {
-  exampleStateBool: boolean;
-  sampleData: SampleData[];
-  currentCompany: string;
-  lastError: any;
-}
-
 export interface AppState8 {
   exampleStateBool: boolean;
   sampleData: SampleData[];
@@ -19,13 +12,6 @@ export interface AppState8 {
 }
 
 const initialState8: AppState8 = {
-  exampleStateBool: false,
-  sampleData: [],
-  currentCompany: undefined,
-  lastError: undefined
-};
-
-const initialState: AppState = {
   exampleStateBool: false,
   sampleData: [],
   currentCompany: undefined,
@@ -60,7 +46,7 @@ export const appReducer8 = createReducer(
   })),
   on(appActions.SampleDataPostRequestSuccess8, (state, { newCompany }) => ({
     ...state,
-    sampleData: addCompany(state.sampleData, newCompany)
+    sampleData: addNewCompanyToSampleDataArray(state.sampleData, newCompany)
   })),
   on(appActions.SampleDataPostRequestFail8, (state, { errorInfo }) => ({
     ...state,
@@ -68,48 +54,8 @@ export const appReducer8 = createReducer(
   })),
 );
 
-function addCompany(sampleData: SampleData[], newCompany: SampleData): SampleData[] {
+function addNewCompanyToSampleDataArray(sampleData: SampleData[], newCompany: SampleData): SampleData[] {
   const clonedArray = [...sampleData];
   clonedArray.push(newCompany);
   return clonedArray;
-}
-
-
-export function appReducer(state = initialState, action) {
-  // let clonedArray: SampleData[];
-  switch (action.type) {
-
-    // case ActionTypes.SampleDataLoadRequestSuccess:
-    //   return { ...state, sampleData: action.payload };
-    // case ActionTypes.SampleDataLoadRequestFail:
-    //   return { ...state, sampleData: [], lastError: action.payload };
-
-    // case ActionTypes.SampleDataPostRequestSuccess:
-    //   clonedArray = [...state.sampleData];
-    //   console.log('%c Cloned Array in reducer', 'color: purple', clonedArray);
-    //   clonedArray.push(action.payload);
-    //   return { ...state, sampleData: clonedArray };
-
-    // case ActionTypes.SampleDataPostRequestFail:
-    //   return { ...state, lastError: action.payload };
-
-    // case ActionTypes.SampleDataPostRequestCurCompanySuccess:
-    //   clonedArray = [...state.sampleData];
-    //   console.log(
-    //     '%c Cloned Array in Cur Comany reducer',
-    //     'color: green',
-    //     clonedArray
-    //   );
-    //   clonedArray.push(action.payload);
-    //   return { ...state, sampleData: clonedArray };
-
-    // case ActionTypes.SampleDataPostRequestCurCompanyFail:
-    //   return { ...state, lastError: action.payload };
-
-    // case ActionTypes.SetCurrentCompany:
-    //   return { ...state, currentCompany: action.payload };
-
-    default:
-      return state;
-  }
 }

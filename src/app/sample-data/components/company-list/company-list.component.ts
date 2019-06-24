@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { Store, select } from '@ngrx/store';
-import { AppState } from 'src/app/state/';
+import { AppState8 } from 'src/app/state/';
 import * as appSelectors from 'src/app/state/selectors';
 import * as appActions from 'src/app/state/app.actions';
 
@@ -16,7 +16,7 @@ export class CompanyListComponent implements OnInit {
   companies$: Observable<string[]>;
 
   constructor(
-    private store: Store<AppState>
+    private store: Store<AppState8>
   ) { }
 
   ngOnInit() {

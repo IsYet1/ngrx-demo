@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Store } from '@ngrx/store';
-import { AppState } from 'src/app/state/';
+import { AppState8 } from 'src/app/state/';
 import * as appActions from 'src/app/state/app.actions';
 import { SampleData } from 'src/app/data/sample-data.model';
 
@@ -13,7 +13,7 @@ import { SampleData } from 'src/app/data/sample-data.model';
 export class LoadDataComponent implements OnInit {
 
   constructor(
-    private store: Store<AppState>
+    private store: Store<AppState8>
   ) { }
 
   ngOnInit() {

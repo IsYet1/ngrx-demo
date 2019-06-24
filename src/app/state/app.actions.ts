@@ -3,23 +3,6 @@ import { SampleData } from 'src/app/data/sample-data.model';
 
 import { createAction, props } from '@ngrx/store';
 
-
-export enum ActionTypes {
-  // SampleDataLoadRequest = '[Example app] Sample Data load requested',
-  // SampleDataLoadRequestSuccess = '[Example app] Sample Data load succeeded',
-  // SampleDataLoadRequestFail = '[Example app] Sample Data load failed',
-
-  // SampleDataPostRequestCurCompany = '[Example app] Sample Data Cur Company Post requested',
-  // SampleDataPostRequestCurCompanySuccess = '[Example app] Sample Data Cur Company Post succeeded',
-  // SampleDataPostRequestCurCompanyFail = '[Example app] Sample Data Cur Company Post failed',
-
-  // SampleDataPostRequest = '[Example app] Sample Data Post requested',
-  // SampleDataPostRequestSuccess = '[Example app] Sample Data Post succeeded',
-  // SampleDataPostRequestFail = '[Example app] Sample Data Post failed',
-
-  // SetCurrentCompany = '[Company List] Set the current selected company',
-}
-
 //#region Example state actions
 
 export const ExampleStateOn8 = createAction(
@@ -79,42 +62,3 @@ export const SampleDataPostRequestCurCompany8 = createAction(
 );
 
 //#endregion
-
-
-// export class SampleDataPostRequestCurCompany implements Action {
-//   readonly type = ActionTypes.SampleDataPostRequestCurCompany;
-//   constructor(public payload: SampleData) {}
-// }
-
-// export class SampleDataPostRequestCurCompanySuccess implements Action {
-//   readonly type = ActionTypes.SampleDataPostRequestCurCompanySuccess;
-//   constructor(public payload: SampleData) {}
-// }
-
-// export class SampleDataPostRequestCurCompanyFail implements Action {
-//   readonly type = ActionTypes.SampleDataPostRequestCurCompanyFail;
-//   constructor(public payload: any) {}
-// }
-
-// export class SetCurrentCompany implements Action {
-//   readonly type = ActionTypes.SetCurrentCompany;
-//   constructor(public payload: string) {}
-// }
-//#endregion
-
-// export type AppActions =
-
-// | SampleDataLoadRequest
-// | SampleDataLoadRequestSuccess
-// | SampleDataLoadRequestFail
-
-// | SampleDataPostRequest
-// // | SampleDataPostRequestSuccess
-// | SampleDataPostRequestFail
-
-// | SampleDataPostRequestCurCompany
-// | SampleDataPostRequestCurCompanySuccess
-// | SampleDataPostRequestCurCompanyFail
-
-// | SetCurrentCompany
-// ;

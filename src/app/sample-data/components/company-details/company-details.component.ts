@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { Store, select } from '@ngrx/store';
-import { AppState } from 'src/app/state/';
+import { AppState8 } from 'src/app/state/';
 import * as appSelectors from 'src/app/state/selectors';
 import { SampleData } from 'src/app/data/sample-data.model';
 
@@ -17,7 +17,7 @@ export class CompanyDetailsComponent implements OnInit {
   companyDetails$: Observable<SampleData[]>;
 
   constructor(
-    private store: Store<AppState>
+    private store: Store<AppState8>
   ) { }
 
   ngOnInit() {
